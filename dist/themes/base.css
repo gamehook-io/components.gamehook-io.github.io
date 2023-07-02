@@ -1,0 +1,11 @@
+.img-sprite {
+    image-rendering: pixelated !important;
+}
+
+.img-grayscale {
+    filter: grayscale(100%) !important;
+}
+
+.img-transparent-85 {
+    opacity: 0.15 !important;
+}

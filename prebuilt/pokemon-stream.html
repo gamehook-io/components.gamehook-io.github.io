@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GameHook UI</title>
+
+    <link rel="stylesheet" href="https://components.gamehook.io/themes/base.css" />
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <Border :title="Hello!">Hello world!</Border>
+        </div>
+    </div>
+
+    <script type="module">
+        import Mapper from 'https://unpkg.com/@gamehook-io/bindings@latest/GB/PokemonYellow.js'
+
+        import { createApp, ref } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+        import { Border } from 'https://components.gamehook.io/dist/vue-all.js'
+
+        createApp({
+            data() { return { mapper: null } },
+            async setup() {
+                this.mapper = new Mapper()
+                await this.mapper.connect()
+            }
+        }).mount('#app')
+    </script>
+</body>
+
+</html>
